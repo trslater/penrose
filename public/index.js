@@ -34,15 +34,13 @@ function draw() {
 }
 
 function* subdivide(a, b, c, isNarrow, depth) {
-    yield [a, b, c]
+    // Base case
+    if (depth == 0) yield [a, b, c]
+    else if (isNarrow) {
+            const p = p5.Vector.add(p5.Vector.mult(a, (1 - phi)), p5.Vector.mult(b, phi))
     
-    if (depth == 0) return
-
-    if (isNarrow) {
-        const p = p5.Vector.add(p5.Vector.mult(a, (1 - phi)), p5.Vector.mult(b, phi))
-
-        yield* subdivide(p, c, a, false, depth - 1)
-        yield* subdivide(c, p, b, true, depth - 1)
+            yield* subdivide(p, c, a, false, depth - 1)
+            yield* subdivide(c, p, b, true, depth - 1)
     }
     else {
         const q = p5.Vector.add(p5.Vector.mult(b, (1 - phi)), p5.Vector.mult(a, phi))
