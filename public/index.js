@@ -27,10 +27,7 @@ function draw() {
         try {
             const [a, b, c, isNarrow] = wedge.next().value
         
-            strokeWeight(1)
-            if (isNarrow) fill(255, 200, 150)
-            else fill(150, 255, 200)
-            stroke(100, 100, 50)
+            orangeAndGreen(isNarrow)
             beginShape()
             vertex(b.x, b.y)
             vertex(a.x, a.y)
@@ -59,4 +56,11 @@ function* subdivide(a, b, c, isNarrow, depth) {
         yield* subdivide(r, q, a, true, depth - 1)
         yield* subdivide(r, c, a, false, depth - 1)
     }
+}
+
+function orangeAndGreen(isNarrow) {
+    strokeWeight(1)
+    if (isNarrow) fill(255, 200, 150)
+    else fill(150, 255, 200)
+    stroke(100, 100, 50)
 }
