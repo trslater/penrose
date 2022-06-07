@@ -30,6 +30,7 @@ function draw() {
             strokeWeight(1)
             if (isNarrow) fill(255, 200, 150)
             else fill(150, 255, 200)
+            stroke(100, 100, 50)
             beginShape()
             vertex(b.x, b.y)
             vertex(a.x, a.y)
