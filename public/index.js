@@ -12,11 +12,9 @@ function setup() {
         const b = p5.Vector.add(a, u)
         const c = p5.Vector.add(a, v)
         
-        if (i%2 == 0) {
-            wedges.push(subdivide(a, b, c, true, 7))
-        } else {
-            wedges.push(subdivide(a, c, b, true, 7))
-        }
+        const points = (i%2 == 0) ? [a, b, c] : [a, c, b]
+
+        wedges.push(subdivide(...points, true, 6))
     }
     
     createCanvas(700, 700)
