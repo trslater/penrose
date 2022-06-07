@@ -1,4 +1,4 @@
-const initSize = 500
+const initSize = 600
 const phi = 0.618
 
 let wedges = []
@@ -28,8 +28,8 @@ function draw() {
             const [a, b, c, isNarrow] = wedge.next().value
         
             strokeWeight(1)
-            if (isNarrow) fill(255, 180, 100)
-            else fill(0, 255, 180)
+            if (isNarrow) fill(255, 200, 150)
+            else fill(150, 255, 200)
             beginShape()
             vertex(b.x, b.y)
             vertex(a.x, a.y)
