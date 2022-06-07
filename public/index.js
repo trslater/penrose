@@ -64,3 +64,10 @@ function orangeAndGreen(isNarrow) {
     else fill(150, 255, 200)
     stroke(100, 100, 50)
 }
+
+function crumpledPaper() {
+    const p = Math.random()
+
+    noStroke()
+    fill((1 - p)*100 + p*200)
+}
